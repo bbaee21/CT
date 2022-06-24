@@ -3,9 +3,14 @@
 
 
 ```
+https://www.acmicpc.net/problem/9020
 ```
 
 
+
+```
+실패
+```
 
 ```
 def sosu(n):
@@ -28,3 +33,36 @@ for _ in range(int(input())):
             b += 1
 ```
 
+
+
+```
+성공
+```
+
+```
+def sosu(x):
+  if x == 1:
+    return False
+  for i in range(2, int(x ** 0.5) + 1):
+    if x % i == 0:
+      return False
+  return True
+
+
+N = int(input())
+
+while N:
+  num = int(input())
+
+  s_num_1 = num // 2
+  s_num_2 = s_num_1
+
+  for _ in range(s_num_1):
+    if sosu(s_num_1) and sosu(s_num_2):
+      print(s_num_1, s_num_2)
+      break
+    else:
+      s_num_1 -= 1
+      s_num_2 += 1
+  N -= 1
+```
